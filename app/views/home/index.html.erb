@@ -1,0 +1,19 @@
+<% @blogs.each do |blog|%>
+<br></br>
+<div class="card" style="width: 60%;">
+  <%= image_tag blog.image if blog.image.attached?%>
+  <div class="card-body">
+    <h5 class="card-title"><%= blog.title %></h5>
+    <span style="font-style: italic; font-size: .8rem;">Posted <%= time_ago_in_words(blog.created_at) %> ago.</span>
+    <br>
+    <p class="card-text"><%= blog.content %></p>
+  </div>
+  <div class="card-body">
+    <i class="fa fa-hand-o-right me-3" style="font-size:24px"> <b>11</b></i>
+  </div>
+</div>
+<% end %>
+<br>
+<div class="digg_pagination">
+      <%= will_paginate @blogs %>
+</div>

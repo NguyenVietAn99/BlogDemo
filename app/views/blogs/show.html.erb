@@ -1,0 +1,13 @@
+    <div class="p-5 mb-4 bg-light rounded-3">
+      <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">
+                <%= @blog.title %></h1>
+        <p class="col-md-8 fs-4"> <%= @blog.content %></p>
+        <%= link_to 'Edit', edit_blog_path(@blog) ,class:"btn btn-secondary" %> 
+
+        <%= link_to 'Delete', @blog, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+        <%= link_to 'Back', blogs_path, class:"btn btn-dark" %>
+
+      </div>
+    </div>
+
